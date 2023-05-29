@@ -95,8 +95,7 @@ width: max-content;
     justify-content: center;
     box-sizing: border-box; 
     padding: 10px;
-    margin-left: 500px;
-    margin-right: 10px;
+   margin: 0 auto;
     
 }
 
@@ -111,4 +110,84 @@ width: max-content;
    padding: 50px;
    margin-left: 0;
    
+}
+.card1 {
+    width: 300px;
+    border: 1px solid #d1ac96;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.card1 img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.macetitas{
+    margin-top: 10px;
+}
+
+.macetitas h3{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.card2 {
+    width: 300px;
+    border: 1px solid #d1ac96;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.card2 img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.macetas{
+    margin-top: 10px;
+}
+
+.macetas h3{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.card3 {
+    width: 300px;
+    border: 1px solid #d1ac96;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.card3 img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.portadofusor{
+    margin-top: 10px;
+}
+
+.portadifusor h3{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.card4 {
+    width: 300px;
+    border: 1px solid #d1ac96;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.card4 img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.alfombras{
+    margin-top: 10px;
+}
+
+.alfombras h3{
+    font-size: 18px;
+    margin-bottom: 5px;
 }
