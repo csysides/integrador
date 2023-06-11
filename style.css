@@ -26,16 +26,8 @@ button{
     border-radius: 15px; 
 
 }
-button.hover{
-    background-color: #d1ac96;
-    transition: all 0.4s linear;
-}
 
 
-
-.pink-span{
-    color: var(-o-animation);
-}
 nav{
     display: flex;
     justify-content: space-around;
@@ -46,6 +38,7 @@ nav{
     position: stick;
     top: 0;
     z-index: 1;
+    text-decoration: none;
    
 }
 .navbar i{
@@ -87,7 +80,7 @@ ul{
     .navbar i {
         display: block;
     }
-    #toggle-menu:checked ~ .navbar__link{
+    #toggle-menu:checked ~ .nav{
         display: flex;
     }
     } 
