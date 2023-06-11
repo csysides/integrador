@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cordelia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,9 +21,9 @@
 <header class="header"> 
     
 
-    <nav>
+    <nav class="navbar">
         <img src="./imagenes/logo.jpg" class="logo" alt="LogoCordelia">
-        <label for="toggle-menu"><i class= "cordelia"></i></label>
+        <label for="toggle-menu"><i class= "fa-solid fa-bars"></i></label>
 <input type="checkbox" id="toggle-menu">
 <ul class="nav">
             <li class="nav__link"><a href="#portada">Home</a></li>
@@ -41,15 +42,20 @@
             <div class="div__izquierda">
                 <h2>
                     Hacemos de tu hogar, la coleccion de lo que amas.
-                    Con cada detalle, Creamos rincones únicos en tu hogar, y dale un toque espacial a tus espacios
+                    Con cada detalle, Creamos rincones únicos en tu hogar, y dale un toque espacial a tus espacios.
+                    Tu hogar, mas tuyo que nunca...
+                    
+                    Amá lo tuyo ❤
                 </h2>
             </div>
             <div class="div__derecha">
                 <img src="/imagenes/totalidad.jpg" class="imagen__derecha" alt="">
             </div>
        </header>
-<section class= "productos"><h2>Productos Home</h2>
-<div class="card1">
+       <h2 class="titulo__productos">Productos Home</h2>
+<section class= "productos" id="elementos">
+<div class="uno">
+    <div class="card1">
     <img src="./imagenes/MiniMaceta.jpg" alt="minimaceta">
     <div class="Macetitas">
         <h3>Mini Macetas</h3>
@@ -62,8 +68,9 @@
         <h3>Macetas</h3>
         <p>Macetas de varios modelos y tamaños para darle el toque natural a tus espacios.</p>
     </div>
-</div>
-<div class="card3">
+</div></div>
+<div class="dos">
+    <div class="card3">
     <img src="./imagenes/portadifuFlor.jpg" alt="portadifusor">
     <div class="__portadifusor">
         <h3>Porta difusores</h3>
@@ -77,8 +84,11 @@
         <p>Algo diferente para tu toque personal. Alfombras de varios modelos y tamaños.</p>
     </div>
 </div>
-    
+</div>
+
 </section>
+
+<footer class="footer">
 <section class="contacto">
     <div class="contact-text">
         <h2 class="contact-title"><b>Contactanos</b></h2>
@@ -87,14 +97,14 @@
                 <li><b>Cordelia deco and home </b></li>
                 <li>💌 cordeliadecoandhome@cordelia.com</li>
                 <li>📞 +542914619912</li>
-               
+                <li> </li>
             </ul>
         </div>
 
     </div>
 </section>
-<footer>
-
+<br>
+<div class="final"> © Linea recomendada y verificada By Cordelia</div>
 </footer>
 </body>
 </html>

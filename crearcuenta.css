@@ -7,7 +7,7 @@ body{
     height: 100vh;
     margin: 0;
     font-family: Linux Libertine;
-   background-image: url(imagenes/totalidad.jpg);
+   background-image: url(imagenes/fondo2.jfif);
    background-size: cover;
    background-position: center;
 }
@@ -30,7 +30,6 @@ body{
 .menu button{
     padding: 10px 20px;
     margin-top: 8px;
-    width: 100%;
     background-color: #d1ac96;
     color: #f1cfbd;
     border: none;

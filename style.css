@@ -40,14 +40,26 @@ nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #d1ac96;
+    background-color: #f1cfbd;
     padding: 1rem;
     font-size: 18px;
+    position: stick;
+    top: 0;
+    z-index: 1;
    
+}
+.navbar i{
+    font-size: 30px;
+    display: none;
+}
 
+#toggle-menu{
+    display: none;
 }
 .nav__link{
     cursor: pointer;
+    text-decoration: none;
+    font-weight: 200;
 }
 img.logo{
     width: 8%;
@@ -59,20 +71,52 @@ ul{
     gap: 10px;
     
 }
-div.portada{
+@media (max-width: 576px) {
+    .navbar ul {
+        background: white;
+        width: 100%;
+        height: calc(100vh - 80px);
+        position: absolute;
+        top: 80px;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: none;
+    }
+    .navbar i {
+        display: block;
+    }
+    #toggle-menu:checked ~ .navbar__link{
+        display: flex;
+    }
+    } 
+}
+
+.portada{
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    align-content: center;
+    width: 20%;
+    height: 20%;
     margin-top: 30px;
+   
 
 }
 .CordeliaTitulo{
 margin-top: 10px;
 height: 50px;
 width: max-content;
+ padding: 0 40% ;
 }
-.
+.titulo__productos{
+    margin-left: 40%;
+    margin-top: 5%;
+    font-size: 250%;
+}
+#elementos .productos{
+    display: inline;
+}
 
 .h2{
     display: block;
@@ -96,13 +140,13 @@ width: max-content;
     box-sizing: border-box; 
     padding: 10px;
    margin: 0 auto;
-    
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
 }
 
 .div__izquierda{
     align-content: center;
     justify-content: center;
-    background-color: #d1ac96;
+    background-color: #f1cfbd;
     font-size: 15px;
     width: 100%;
     height: 200px;
@@ -111,6 +155,23 @@ width: max-content;
    margin-left: 0;
    
 }
+
+.productos {
+    display: flex;
+    justify-content: center;
+    flex-direction: row ;
+    margin: 5%;
+}
+.uno .dos{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row ;
+    padding: 10%;
+    margin: 10%;
+}
+
+
+
 .card1 {
     width: 300px;
     border: 1px solid #d1ac96;
@@ -190,4 +251,29 @@ width: max-content;
 .alfombras h3{
     font-size: 18px;
     margin-bottom: 5px;
+}
+
+.contacto {
+    
+    padding: 80px, 0;
+    height: 30vh;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: colum;
+    justify-content: center;
+    align-items: center;
+ font-size: 800;
+ gap: 30px
+}
+.lista-contacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5% 0 0 0;
+}
+.final{
+    display: flex;
+    justify-content: center;
+    margin: 0 0 8% 0;
 }
