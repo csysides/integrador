@@ -86,10 +86,7 @@ width: max-content;
 .titulo__productos{
     margin-left: 40%;
     margin-top: 5%;
-    font-size: 250%;
-}
-#elementos .productos{
-    display: inline;
+   
 }
 
 .h2{
@@ -129,13 +126,20 @@ width: max-content;
    margin-left: 0;
 
 }
-
+.h2 .titulo__productos{
+    font-size: small;
+}
 .productos {
     display: flex;
     justify-content: center;
     flex-direction: row ;
     margin: 5%;
     gap:8%;
+}
+
+.home{
+    display: flex;
+    flex-direction: row;
 }
 
 .card1 {
@@ -258,6 +262,10 @@ width: max-content;
     .titulo__productos{
         font-size: 100%;
     }
+    #elementos{
+       flex-direction: column; 
+    }
+    
 
 }
 /* //mobile// */ */
@@ -270,5 +278,9 @@ width: max-content;
     .h2{
         font-size: 16px;
     }
+    #elementos{
+        flex-direction: column; 
+     }
+     
 
 }
