@@ -5,9 +5,28 @@
     padding: 0;
     box-sizing: border-box ;
     font-family: linux libertine ;
-    text-decoration: none;
-    max-width: 100%;
 }
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+
+button{
+    background-color: #fff4ef;
+    border: 0 solid black;
+    outline: none;
+    width: 180px;
+    height: 40px;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.4s linear;
+    border-radius: 15px; 
+
+}
+
 
 nav{
     display: flex;
@@ -20,8 +39,7 @@ nav{
     top: 0;
     z-index: 1;
     text-decoration: none;
-    max-width: 100%;
-
+   
 }
 .navbar i{
     font-size: 30px;
@@ -33,6 +51,7 @@ nav{
 }
 .nav__link{
     cursor: pointer;
+    text-decoration: none;
     font-weight: 200;
 }
 img.logo{
@@ -43,7 +62,7 @@ ul{
     list-style: none;
     display: flex;
     gap: 10px;
-
+    
 }
 @media (max-width: 576px) {
     .navbar ul {
@@ -64,17 +83,17 @@ ul{
     #toggle-menu:checked ~ .nav{
         display: flex;
     }
-    }
-
+    } 
+}
 
 .portada{
     display: flex;
     justify-content: center;
     align-content: center;
-    width: 45%;
-    height: 30%;
-    margin: 20px 30%;
-
+    width: 20%;
+    height: 20%;
+    margin-top: 30px;
+   
 
 }
 .CordeliaTitulo{
@@ -94,7 +113,7 @@ width: max-content;
 
 .h2{
     display: block;
-    font-size: 60%;
+    font-size: 1.5rem;
     align-content: center;
    margin: 20px;
    padding: 20px;
@@ -111,7 +130,7 @@ width: max-content;
     border-radius: 8%;
     align-items: flex-end;
     justify-content: center;
-    box-sizing: border-box;
+    box-sizing: border-box; 
     padding: 10px;
    margin: 0 auto;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
@@ -127,7 +146,7 @@ width: max-content;
    text-align: center ;
    padding: 50px;
    margin-left: 0;
-
+   
 }
 
 .productos {
@@ -135,8 +154,30 @@ width: max-content;
     justify-content: center;
     flex-direction: row ;
     margin: 5%;
-    gap:8%;
+    gap:5%;
 }
+#productos{
+    display: inline;
+     padding: 70px 0;
+    margin: 5%;
+    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10%;
+    flex-wrap: wrap;
+
+}
+.uno .dos{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row ;
+    padding: 10%;
+    margin: 10%;
+
+}
+
+
 
 .card1 {
     width: 300px;
@@ -220,11 +261,11 @@ width: max-content;
 }
 
 .contacto {
-
+    
     padding: 80px, 0;
     height: 30vh;
     width: 100%;
-
+    
     display: flex;
     flex-direction: colum;
     justify-content: center;
@@ -242,33 +283,4 @@ width: max-content;
     display: flex;
     justify-content: center;
     margin: 0 0 8% 0;
-}
-/* //tablet// */
-@media (min-width:577) and (max-width:992px){
-    .navbar{
-        gap:10px;
-    }
-    .portada{
-        width: 10%;
-        height: 10%;
-    }
-    .div__derecha{
-        
-    }
-    .titulo__productos{
-        font-size: 100%;
-    }
-
-}
-/* //mobile// */ */
-@media (max-width:576px){
-    
-    .portada{
-        width: 10%;
-        height: 10%;
-    }
-    .h2{
-        font-size: 16px;
-    }
-
 }
