@@ -243,6 +243,7 @@ width: max-content;
         align-items: center;
         justify-content: center;
         flex-direction: column !important;
+        gap: 25px;
 
     }
    
@@ -251,16 +252,18 @@ width: max-content;
 @media (max-width:576px) {
     .navbar ul {
         background: #fff4ef;
-        width: 100%;
+        width: 90%;
         height: calc(100vh - 80px);
         position: absolute;
-        top: -190px;
-        left: 0;
+        top: 65px;
+        left: 5%;
+        padding: 45px 30px;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         display: none;
         font-size: x-large;
+        z-index: 2;
     }
     .navbar i {
         display: block;
@@ -281,6 +284,7 @@ width: max-content;
         align-items: center;
         justify-content: center;
         flex-direction: column!important;
+        gap: 25px;
     }
    
     #elementos{
