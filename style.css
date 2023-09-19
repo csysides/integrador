@@ -195,6 +195,131 @@ width: max-content;
     margin-bottom: 5px;
 }
 
+.producto__top,
+.producto__mid,
+.producto__boton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: large;
+
+}
+.producto__top h3 {
+    font-size: 27px;
+    font-weight: 300;
+}
+p{
+    font-size: 20px;
+}
+.producto__mid{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.add{
+    background: #f1cfbd;
+    border: none;
+    padding-bottom: 10px 35px;
+    color: aliceblue;
+    border-radius: 10px;
+    cursor: pointer;
+height: 30px;
+width: 130px;
+}
+/* contacto */
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 10px;
+    background-image: url(./imagenes/fondo.jpg);
+
+}
+
+.contact-container{
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container img{
+max-width: 30%;
+}
+
+.form  {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 50%;
+    min-width: 300px;
+    max-width: 450px;
+}
+
+.form ::placeholder {
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px;
+}
+
+
+
+.form input[type=text],
+input[type=email]{
+    border-radius: 1rem;
+    font-size: 18px;
+    padding: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.form textarea{
+    border: 1px solid #d1ac96;
+    border-radius: 1rem;
+    background-color: white;
+    max-height: 35%;
+    color: lightgray;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px;
+}
+
+
+.submit-btn{
+    width: fit-content;
+    align-self: center;
+    font-family: fredoka, sans-serif;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+    background-color:#d1ac96;
+    font-weight: 400;
+    border: none;
+    box-shadow: 8px 8px 10px -8px rgba(132,90,147,0.75);
+    -webkit-box-shadow: 8px 8px 10px -8px rgba(132,90,147,0.75);
+    -moz-box-shadow: 8px 8px 10px -8px rgba(132,90,147,0.75);
+    }
+
+ #form-message{
+    text-align: center;
+    color: white;
+    font-family: fredoka, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 5px 10px;
+ }
+
+.hidden{
+    display: none;
+}
+
+
 .contacto {
 
     padding: 80px, 0;
