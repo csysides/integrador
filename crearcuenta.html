@@ -10,16 +10,24 @@
 <body>
     <div class="menu">
         <h1 class="title">Crear cuenta en Cordelia</h1>
-        <input type="email" placeholder="Correo Electronico">
+        <form action="" class="form__container" id="register-form">
+            <input type="name" placeholder="Nombre" autocomplete="off" id="name" >
+            <small></small>
+            <br><br>
+            <input type="email" placeholder="Correo Electronico" id="email" autocomplete="off" >
+            <small></small>
         <br>
         <br>
-        <input type="password" name="Contraseña" id="contraseña" placeholder="Contraseña"><br>
+        <input type="password" name="Contraseña" id="contraseña" placeholder="Contraseña" autocomplete="off">
+        <small></small><br>
         <div class="botones">
         <br>
-        <input type="password" name="Contraseña" id="contraseña" placeholder="Confirmar contraseña"><br>
-        <div class="botones">
+        <input type="submit"  class="form__submit__btn" value="Registrarse">
         <button class="botones">Crear cuenta</button>
-        <button class="botones"> <a href="./index.html">Volver a página central</a> </button></div>
+        <button class="botones"> <a href="./index.html">Volver a página central</a> </button>
     </div>
+</form>
+        
+    <script src="./crearcuenta.js"></script>
 </body>
 </html>

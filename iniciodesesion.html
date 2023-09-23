@@ -1,23 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>inicio de sesión</title>
-    <link rel="stylesheet" href="iniciodesesion.css">
-</head>
-<body>
-    <div class="menu">
-        <h1 class="title">Cordelia</h1>
-        <input type="email" placeholder="Correo Electronico">
-        <br>
-        <br>
-        <input type="password" name="Comtraseña" id="contraseña" placeholder="Contraseña"><br>
-        <div class="botones"><button>Ingresar</button>
-        <button class="botones"> <a href="./crearcuenta.html">Crear cuenta</a> </button>
-        <button class="botones"> <a href="./index.html">Volver página cental</a> </button></div>
+    <link rel="stylesheet" href="iniciodesesion.css" />
+  </head>
+  <body>
+    <div class="menu" >
+      <h1 class="title">Cordelia</h1>
+      <form class="form__container" id="login-form">
+        <div class="form__fiel">
+        <input
+          type="email"
+          placeholder="Correo Electronico"
+          class="form__imput"
+          id="email"
+          autocomplete="off"
+        />
+      </div>
+
+      <br />
+      <br />
+      <input
+        type="password"
+        class="form__imput"
+        id="contraseña"
+        placeholder="Contraseña"
+        autocomplete="off"
+      />
+      <br />
+      <div class="botones">
+        <small id="form_error"></small>
+        
+           <input type="submit" class="botones"  value="Inicar Sesion" />
+  
+       
+        <button class="botones">
+          <a href="./crearcuenta.html">Crear cuenta</a>
+        </button>
+        <button class="botones">
+          <a href="./index.html">Volver página cental</a>
+        </button>
+      </div>
     </div>
-   
-</body>
+  </form>
+
+    <script src="./iniciodesesion.js"></script>
+  </body>
 </html>
