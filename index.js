@@ -11,6 +11,8 @@ const overlay = document.querySelector(".overlay");
 const successModal = document.querySelector(".add-modal");
 const deleteBtn = document.querySelector(".vaciar");
 
+//mi carrito no funciona, y no se que hacerle.
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const createProductTemplate = (product) => {
@@ -23,73 +25,38 @@ const createProductTemplate = (product) => {
 
       <div class="product-top">
           <h3>${name}</h3>
-          <p>Current Bid</p>
       </div>
 
-      <div class="product-mid">
+      <div class="producto-mid">
           <div class="product-user">
-              <img src=${userImg} alt="user" />
               <p>@${user}</p>
           </div>
-          <span>${bid} eTH</span>
+          <span>${price} eTH</span>
       </div>
 
 
       <div class="product-bot">
           <div class="product-offer">
               <div class="offer-time">
-                  <img src="./assets/img/fire.png" alt="" />
+                  
                   <p>05:12:07</p>
               </div>
-              <button class="btn-add"
+              <button class="add"
               data-id='${id}'
               data-name='${name}'
-              data-bid='${bid}'
-              data-img='${cardImg}'>Add</button>
+              data-price='${price}'
+              data-img='${cardImg}'>Agregar al carrito</button>
           </div>
       </div>
   </div>
 </div>`;
 };
 
-// [{},{},{}] || ['<></>','<></>','<></>'] || '<></>''<></>''<></>''<></>''<></>'
 const renderProducts = (productList) => {
   productsContainer.innerHTML += productList
     .map(createProductTemplate)
     .join("");
 };
-
-// Función par arenderizar mpas productos cuando la persona pariete ver más
-
-const showMoreProducts = () => {
-  appState.currentProductsIndex += 1;
-  let { products, currentProductsIndex } = appState;
-  renderProducts(products[currentProductsIndex]);
-  if (isLastIndexOf()) {
-    showMoreBtn.classList.add("hidden");
-  }
-};
-
-// Función para si el elemento que se apretó es un boton de categoria y no esta activo
-const isInactiveFilterBtn = (element) => {
-  return (
-    element.classList.contains("category") &&
-    !element.classList.contains("active")
-  );
-};
-
-// Función para filtar los productos por categoría y renderizarlos
-
-const renderFilteredProducts = () => {
-  const filteredProducts = productsData.filter(
-    (product) => product.category === appState.activeFilter
-  );
-  renderProducts(filteredProducts);
-};
-
-// Menu interface
-
-// Función para mostrar u ocultar el menu hamburguesa y el overlay
 
 const toggleMenu = () => {
   barsMenu.classList.toggle("open-menu");
@@ -109,15 +76,12 @@ const toggleCart = () => {
   overlay.classList.toggle("show-overlay");
 };
 
-// Función para cerrar el menú hamburguewsa y el overlay cuando se hace click en un link
-
 const closeOnClick = (e) => {
   if (!e.target.classList.contains("navbar-link")) return;
   barsMenu.classList.remove("open-menu");
   overlay.classList.remove("show-overlay");
 };
 
-//Función para cerrar el menú hamburguewsa y el overlay cuando se hace scroll
 const closeOnScroll = () => {
   if (
     !barsMenu.classList.contains("open-menu") &&
@@ -129,26 +93,21 @@ const closeOnScroll = () => {
   cartMenu.classList.remove("open-cart");
   overlay.classList.remove("show-overlay");
 };
-//Función para cerrar el menú hamburguewsa y el overlay cuando se hace click en el overlay
+
 const closeOnOverlayClick = () => {
   barsMenu.classList.remove("open-menu");
   cartMenu.classList.remove("open-cart");
   overlay.classList.remove("show-overlay");
 };
 
-// Lógica para agregar items al carrito
-
-// Función para crear el template de un producto en el carrito
-
 const createCartProductTemplate = (cartProduct) => {
-  const { id, name, bid, img, quantity } = cartProduct;
+  const { id, name, price, img, quantity } = cartProduct;
   return `    
   <div class="cart-item">
     <img src=${img} alt="Nft del carrito" />
     <div class="item-info">
       <h3 class="item-title">${name}</h3>
-      <p class="item-bid">Current bid</p>
-      <span class="item-price">${bid} ETH</span>
+      <span class="item-price">${price} $</span>
     </div>
     <div class="item-handler">
       <span class="quantity-handler down" data-id=${id}>-</span>
@@ -158,8 +117,6 @@ const createCartProductTemplate = (cartProduct) => {
   </div>`;
 };
 
-// Función para renderizar los productos del carrito o el mensaje "No hay productos en el carrito"
-
 const renderCart = () => {
   if (!cart.length) {
     productsCart.innerHTML = `<p class="empty-msg">No hay productos en el carrito.</p>`;
@@ -168,29 +125,24 @@ const renderCart = () => {
   productsCart.innerHTML = cart.map(createCartProductTemplate).join("");
 };
 
-// función para obtener el total de la compra
-
 const getCartTotal = () => {
   return cart.reduce(
     (accumulator, current) =>
-      accumulator + Number(current.bid) * current.quantity,
+      accumulator + Number(current.price) * current.quantity,
     0
   );
 };
-
-// función para mostrar el total de la compra
 
 const showCartTotal = () => {
   total.innerHTML = `${getCartTotal().toFixed(2)} eTH`;
 };
 
-// función para actualizar la burbuja de cantidad con el numero de productos en el carrito
-
 const renderCartBubble = () => {
-  cartBubble.textContent = cart.reduce((acc, cur) => acc + cur.quantity, 0);
+  cartBubble.textContent = cart.reduce(
+    (accumulator, current) => accumulator + current.quantity,
+    0
+  );
 };
-
-// función para habilitar o deshabilitar un boton segun corresponda
 
 const disableBtn = (btn) => {
   if (!cart.length) {
@@ -199,12 +151,10 @@ const disableBtn = (btn) => {
     btn.classList.remove("disabled");
   }
 };
-// función para guardar el carrito en el localStorage
+
 const saveCart = () => {
   localStorage.setItem("cart", JSON.stringify(cart));
 };
-
-// función para modificar el estado del carrito
 
 const updateCartState = () => {
   saveCart();
@@ -215,23 +165,19 @@ const updateCartState = () => {
   renderCartBubble();
 };
 
-// Función para crear un objeto con info del producto a agregar del carrito
-
-const createProductData = ({ id, name, bid, img }) => {
+const createProductData = ({ id, name, price, img }) => {
   return {
     id,
     name,
-    bid,
+    price,
     img,
   };
 };
 
-//Función para saber si un producto ya existe en el carrito
 const isExistingCartProduct = (product) => {
   return cart.find((item) => item.id === product.id);
 };
 
-// Función para agregar una unidad a un producto que ya este en el el carrito
 const addUnitToProduct = (product) => {
   cart = cart.map((cartProduct) =>
     cartProduct.id === product.id
@@ -240,23 +186,20 @@ const addUnitToProduct = (product) => {
   );
 };
 
-// Función para crear un objeto con la info del producto que se quiere agregar al carrito
 const createCartPorduct = (product) => {
   cart = [...cart, { ...product, quantity: 1 }];
 };
 
-// función para mostrar el modal de éxito al agregar o añadir un producto
 const showSuccessModal = (msg) => {
   successModal.classList.add("active-modal");
   successModal.textContent = msg;
   setTimeout(() => {
     successModal.classList.remove("active-modal");
-  }, 1500); // 1500ms === 1,5s
+  }, 1500);
 };
 
-// Función para crear un objeto con la información del producto que se agrega al carrito
 const addProduct = (e) => {
-  if (!e.target.classList.contains("btn-add")) return;
+  if (!e.target.classList.contains("add")) return;
   const product = createProductData(e.target.dataset);
   if (isExistingCartProduct(product)) {
     addUnitToProduct(product);
@@ -268,21 +211,16 @@ const addProduct = (e) => {
   updateCartState();
 };
 
-// Función para agregar mas de cada producto del carrito
-
 const handlePlusBtnEvent = (id) => {
   const existingCartProduct = cart.find((item) => item.id === id);
   addUnitToProduct(existingCartProduct);
 };
 
-// Función para restar de cada producto del carrito
-// Ciclo de vida <- termino/fallece la función
-// EN EL FOR - break / continue
 const handleMinusBtnEvent = (id) => {
   const existingCartProduct = cart.find((item) => item.id === id);
 
   if (existingCartProduct.quantity === 1) {
-    if (window.confirm("¿Desea eliminar el producto del carrito?")) {
+    if (window.confirm("¿Desea eliminar algun producto?")) {
       removeProductFromCart(existingCartProduct);
     }
     return;
@@ -290,20 +228,11 @@ const handleMinusBtnEvent = (id) => {
   subtractProductUnit(existingCartProduct);
 };
 
-// Función para remover un producto del carrito
 const removeProductFromCart = (product) => {
   cart = cart.filter((item) => item.id !== product.id);
   updateCartState();
 };
 
-// Función para restar una unidad a un producto del carrito
-/*
-[{
-messi,
-4
-}]
-
-*/
 const subtractProductUnit = (product) => {
   cart = cart.map((item) => {
     return item.id === product.id
@@ -311,8 +240,6 @@ const subtractProductUnit = (product) => {
       : item;
   });
 };
-
-// Función para manejar los eventos al apretar el botón mas o menos del item del carrito
 
 const handleQuantity = (e) => {
   if (e.target.classList.contains("down")) {
@@ -324,13 +251,10 @@ const handleQuantity = (e) => {
   updateCartState();
 };
 
-// Función para vaciar el carrito
 const resetCartItems = () => {
   cart = [];
   updateCartState();
 };
-
-// Función para completar la compra o vaciar le carrito
 
 const completeCartAction = (confirmMsg, successMsg) => {
   if (!cart.length) return;
@@ -340,12 +264,10 @@ const completeCartAction = (confirmMsg, successMsg) => {
   }
 };
 
-// Función para disparar un mensaje de compra existosa
 const completeBuy = () => {
   completeCartAction("¿Desea completar su compra?", "¡Gracias por su compra!");
 };
 
-// Función para disparar el mensaje de vaciado exitoso del carrito
 const deleteCart = () => {
   completeCartAction(
     "¿Desea vaciar el carrito?",
